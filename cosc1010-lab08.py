@@ -52,6 +52,15 @@ print("*" * 75)
 # Call your function and print the resulting list
 
 def slopeIntercept(m, lowerX, upperX, b):
+    if type(lowerX) != int:
+        return False
+    
+    if type(upperX) != int:
+        return False
+
+    if lowerX > upperX:
+        return False
+    
     y = [(m*x)+b for x in range(lowerX,upperX+1)]
     return y
 
@@ -95,11 +104,20 @@ print("*" * 75)
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
 
+def sqrtAllowable(value):
+    if value < 0:
+        return None
+    return value ** 0.5
+    
+
 def quadratic(a, b, c):
     # Solving for the roots of the quadratic equation
-    squareRoot = ((b**2)-4*a*c)**(1//2)
-    if squareRoot < 0:
-        return null
+    discriminent = ((b**2)-(4*a*c))
+    squareRoot = sqrtAllowable(discriminent)
+
+    if squareRoot is None:
+        return None
+
     x1 = (-b+squareRoot)/(2*a)
     x2 = (-b-squareRoot)/(2*a)
     return x1, x2
@@ -123,4 +141,7 @@ while True:
 
     result = quadratic(a, b, c)
 
-    print("The roots for the function are: ", result)
+    if result is None:
+        print("Try again, this is a simple program, and it cannot do complex roots")
+    else:
+        print("The roots for the function are: ", result)
