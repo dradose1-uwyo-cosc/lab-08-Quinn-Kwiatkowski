@@ -1,22 +1,16 @@
-# Your Name Here
+# Quinn Kwiatkowski
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
-# Sources, people worked with, help given to:
-# your
-# comments
-# here
-
+# Submission Date: 11/10/2024
+# Lab 08
+# Lab Section: 14
+# Sources, people worked with, help given to: None
 
 # Write a function that will properly check strings to see if they are an int or float, and convert them if so
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
-
 print("*" * 75)
-
 
 # Point-slope y = mx + b
 # This is used in mathematics to determine what the value y would be for any given x

@@ -1,12 +1,7 @@
-# [Name]
-## [Assignment #]
-## [Submission date: MM/DD/YY]
+# [Quinn Kwiatkowski]
+## [Lab 08]
+## [Submission date: 11/10/2024]
 ## Worked with/sources 
-* example
-* example
-* example
-* example
+* None
 ## Project Quirks/ Things that don't work
-* example
-* example
-* example
+* None
