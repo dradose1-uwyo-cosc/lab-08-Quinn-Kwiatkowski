@@ -10,8 +10,28 @@
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
-print("*" * 75)
+def convertString(string):
+    try:
+        integer = int(string)
+        return integer
+    except ValueError:
+        print("something")
+        if string.count('.') == 1: # Make sure that there is only one decimal place
+            try:
+                float = float(string)
+            except ValueError:
+                return False
+        return False
 
+userInput = input("Enter a number: ")
+
+output = convertString(userInput)
+if output is False:
+    print("Could not convert to string or float, womp womp.")
+else:
+    print("Converted string:", output)
+
+print("*" * 75)
 # Point-slope y = mx + b
 # This is used in mathematics to determine what the value y would be for any given x
 # Where b is the y-intercept, where the line crosses the y-axis (x = 0)
