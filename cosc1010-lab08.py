@@ -15,7 +15,6 @@ def convertString(string):
         integer = int(string)
         return integer
     except ValueError:
-        print("something")
         if string.count('.') == 1: # Make sure that there is only one decimal place
             try:
                 float = float(string)
@@ -52,9 +51,42 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
+def slopeIntercept(m, lowerX, upperX, b):
+    y = [(m*x)+b for x in range(lowerX,upperX+1)]
+    return y
+
+while True:
+    # Taking all the inputs from the user, and breaking the program if the user types 'exit'
+    mInput = input("Enter a m value, or 'exit' to exit: ")
+    if mInput.lower() == 'exit':
+        break
+    lowerXInput = input("Enter a lower x value, or 'exit' to exit: ")
+    if lowerXInput.lower() == 'exit':
+        break
+    upperXInput = input("Enter an upper x value, or 'exit' to exit: ")
+    if upperXInput.lower() == 'exit':
+        break
+    bInput = input("Enter a b value, or 'exit' to exit: ")
+    if bInput.lower() == 'exit':
+        break
+
+    # Convert to string using the function from the first problem:
+    m = convertString(mInput)
+    lowerX = convertString(lowerXInput)
+    upperX = convertString(upperXInput)
+    b = convertString(bInput)
+
+    if m is None or lowerX is None or upperX is None or b is None:
+        print("Enter numbers!")
+        continue
+
+    result = slopeIntercept(m,lowerX,upperX,b)
+    if result is False:
+        print("Invalid entry, try again.")
+    else:
+        print("y values are: ", result)
+
 print("*" * 75)
-
-
 # Write a function to solve the quadratic formula
 # https://en.wikipedia.org/wiki/Quadratic_formula
 # Accept inputs for a, b, c
