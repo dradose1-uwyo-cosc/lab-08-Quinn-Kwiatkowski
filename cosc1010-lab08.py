@@ -94,3 +94,33 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+
+def quadratic(a, b, c):
+    # Solving for the roots of the quadratic equation
+    squareRoot = ((b**2)-4*a*c)**(1//2)
+    if squareRoot < 0:
+        return null
+    x1 = (-b+squareRoot)/(2*a)
+    x2 = (-b-squareRoot)/(2*a)
+    return x1, x2
+
+while True:
+    # Takes an input from the user for the a, b, and c values of the quadratic
+    aInput = input("Enter a value for a, or 'exit' to exit: ")
+    if aInput.lower() == 'exit':
+        break
+    bInput = input("Enter a value for b, or 'exit' to exit: ")
+    if bInput.lower() == 'exit':
+        break
+    cInput = input("Enter a value for c, or 'exit' to exit: ")
+    if cInput.lower() == 'exit':
+        break
+
+    # Convert to string using the function from the first problem
+    a = convertString(aInput)
+    b = convertString(bInput)
+    c = convertString(cInput)
+
+    result = quadratic(a, b, c)
+
+    print("The roots for the function are: ", result)
